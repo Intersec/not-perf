@@ -66,6 +66,15 @@ rustflags = [
 
 3. Grab the binary from `target/mips64-unknown-linux-gnuabi64/` or `target/armv7-unknown-linux-gnueabihf/`.
 
+### Static cross-compiling
+
+To cross compile statically, use [rust-musl-cross](https://github.com/benfred/rust-musl-cross).
+For example for `x86_64`:
+```
+docker run --rm -it -v "$(pwd)":/home/rust/src messense/rust-musl-cross:x86_64-musl bash -c 'cd /home/rust/src/cli && cargo build --release'
+
+```
+
 ## Basic usage
 
 Profiling an already running process by its PID:
